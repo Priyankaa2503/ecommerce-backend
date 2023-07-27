@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const app = express();
 const userRoute = require('./routes/user.js')
+const authRoute = require('./routes/auth.js')
 dotenv.config();
 app.use(express.json());
 /* MONGOOSE SETUP */
@@ -18,3 +19,4 @@ mongoose
   .catch((error) => console.log(`${error} did not connect`));
 
   app.use("/api/user",userRoute)
+  app.use("/api/auth",authRoute)
