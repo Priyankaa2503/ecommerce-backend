@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const app = express();
 const userRoute = require('./routes/user.js')
 const authRoute = require('./routes/auth.js')
+const productRoute = require('./routes/product.js')
 dotenv.config();
 app.use(express.json());
 /* MONGOOSE SETUP */
@@ -20,3 +21,4 @@ mongoose
 
   app.use("/api/user",userRoute)
   app.use("/api/auth",authRoute)
+  app.use("/api/products",productRoute)
