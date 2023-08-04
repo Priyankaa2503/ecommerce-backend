@@ -62,11 +62,11 @@ router.get("/find/:id",  async (req, res) => {
 router.get("/",  async (req, res) => {
   const queryNew = req.query.new;
   const queryCategory = req.query.category;
-  // if query is provided return 5 users else return all users
+  // if query is provided return 5 users else return all products
   try {
     let products;
     if(queryNew){
-        products = await Product.find().sort({createdAt:-1}).limit(1);
+        products = await Product.find().sort({createdAt:-1}).limit(5);
     }
     else if(queryCategory){
         products = await Product.find({
